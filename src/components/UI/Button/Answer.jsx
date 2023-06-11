@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Answer.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Answer(props) {
-  // const [isSelected, setIsSelected] = useState(false);
 
   const handleClick = () => {
     props.onClick(props.value);

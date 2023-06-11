@@ -31,8 +31,6 @@ function QuizPage(props) {
     const inAnswerIndex = inAnswers.indexOf(answer);
     setIsSelected([...showIncorrectAns.slice(0, inAnswerIndex), true, ...showIncorrectAns.slice(inAnswerIndex + 1)]);
     setUserAnswers([...userAnswers.slice(0, currentQuestion), answer, ...userAnswers.slice(currentQuestion + 1)]); // lưu lại các câu trả lời cũ
-    console.log('userAnswers');
-    console.log(userAnswers);
   };
 
   const handleButtonClick = () => { // button start
@@ -49,7 +47,7 @@ function QuizPage(props) {
         setIsCorrect(false); // Đánh dấu câu trả lời sai
         const incorrectAnswers = QuestionAns.results[currentQuestion].incorrect_answers;
         const incorrectAnswerIndex = incorrectAnswers.indexOf(selectedAnswer);
-        setShowIncorrectAns([...showIncorrectAns.slice(0, incorrectAnswerIndex), true, ...showIncorrectAns.slice(incorrectAnswerIndex + 1)]);
+        setShowIncorrectAns([...showIncorrectAns.slice(0, incorrectAnswerIndex), true, ...showIncorrectAns.slice(incorrectAnswerIndex + 1), false]);
       }
       setShowCorrectAns(true);
       setNewNextButton(true);
@@ -66,45 +64,75 @@ function QuizPage(props) {
       setShowCorrectAns(false);
       setSelectedAnswer(false);
       setNewNextButton(false);
-      console.log(showIncorrectAns);
       setShowIncorrectAns([false, false, false, false]);
       setIsSelected([false, false, false, false]);
-      console.log('userAnswers');
-      console.log(userAnswers);
     }
     if (reviewClick === true) {
-      if (currentQuestion === QuestionAns.results.length - 1) {
-        setShowResult(true);
-      } else {
-        setCurrentQuestion(currentQuestion + 1); // Chuyển đến câu hỏi tiếp theo
-        console.log('check');
-        console.log(userAnswers[currentQuestion + 1]);
-        const incorrectAnswers = QuestionAns.results[currentQuestion].incorrect_answers;
-        const incorrectAnswerIndex = incorrectAnswers.indexOf(userAnswers[currentQuestion + 1]);
-        setShowIncorrectAns([false, false, false, false]);
-        setShowIncorrectAns([...showIncorrectAns.slice(0, incorrectAnswerIndex), true, ...showIncorrectAns.slice(incorrectAnswerIndex + 1)]);
-        console.log(showIncorrectAns);
-        console.log(showCorrectAns);
-      }
       setShowCorrectAns(true);
       setNewNextButton(true);
+      if (currentQuestion === QuestionAns.results.length - 1) {
+        setShowResult(true);
+      }
+      else {
+        setCurrentQuestion(currentQuestion + 1); // Chuyển đến câu hỏi tiếp theo
+        const incorrectAnswers = QuestionAns.results[currentQuestion + 1].incorrect_answers;
+        const incorrectAnswerIndex = incorrectAnswers.indexOf(userAnswers[currentQuestion + 1]);
+        setShowIncorrectAns((prevShowIncorrectAns) => {
+          return prevShowIncorrectAns.map((value, index) => {
+            if (index === incorrectAnswerIndex) {
+              return true;
+            }
+            return false;
+          });
+        });
+        setIsSelected((prevShowIncorrectAns) => {
+          return prevShowIncorrectAns.map((value, index) => {
+            if (index === incorrectAnswerIndex) {
+              return true;
+            }
+            return false;
+          });
+        });
+      }
     }
   };
   const handleReplayClick = () => {
+    setShowCorrectAns(false);
+    setShowIncorrectAns([false, false, false, false]);
     setCurrentQuestion(0);
     setReviewClick(false);
     setShowContent(false);
     setScore(0);
     setIsCorrect(false);
     setShowResult(false);
+    setNewNextButton(false);
+    setIsSelected([false, false, false, false]);
   };
   const handleReviewClick = () => {
-    console.log('userAnswers');
-    console.log(userAnswers);
     setCurrentQuestion(0);
     setReviewClick(true);
     setShowContent(true); // Hiển thị nội dung câu hỏi và câu trả lời
     setShowResult(false); // Ẩn kết quả
+
+    const incorrectAnswers = QuestionAns.results[0].incorrect_answers;
+    const incorrectAnswerIndex = incorrectAnswers.indexOf(userAnswers[0]);
+    setShowIncorrectAns((prevShowIncorrectAns) => {
+      return prevShowIncorrectAns.map((value, index) => {
+        if (index === incorrectAnswerIndex) {
+          return true;
+        }
+        return false;
+      });
+    });
+    setIsSelected((prevShowIncorrectAns) => {
+      return prevShowIncorrectAns.map((value, index) => {
+        if (index === incorrectAnswerIndex) {
+          return true;
+        }
+        return false;
+      });
+    });
+    setShowCorrectAns(true);
   };
 
   // TÍNH THỜI GIAN LÀM QUIZ
