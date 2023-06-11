@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Results.module.css';
 import Button from '../UI/Button/Button';
 import ButtonCircle from '../UI/Button/ButtonCircle';
