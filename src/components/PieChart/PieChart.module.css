@@ -1,0 +1,12 @@
+:global(.ant-progress .ant-progress-inner:not(.ant-progress-circle-gradient) .ant-progress-circle-path) {
+    stroke: #374552;
+}
+
+:global(.ant-progress.ant-progress-circle .ant-progress-text) {
+    font-family: 'Poppins', sans-serif;
+    color: #374552;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+}

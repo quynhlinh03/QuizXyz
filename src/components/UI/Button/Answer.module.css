@@ -1,0 +1,35 @@
+.button {
+    border-radius: 50px;
+    width: 330px;
+    height: 58px;
+    background-color: transparent;
+    color: #FFF4F7;
+    border: 1.5px solid #FFF4F7;
+    margin: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-value{
+    width: 80%;
+}
+
+.correctAns, .selected {
+    background-color: #FFF4F7;
+    color: #374552;
+    font-weight: 500;
+}
+
+.icon{
+    color: #F85F8B;
+    font-size: 18px;
+}

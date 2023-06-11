@@ -1,0 +1,112 @@
+.container {
+    position: relative;
+    background: linear-gradient(to right, #FFF4F7, #fff);
+}
+
+.result-container {
+    /* background: linear-gradient(to bottom, #FEDCE6, #fff); */
+    background-color: #FEDCE6 !important;
+}
+
+.sub-container {
+    background-color: #374552;
+    text-align: center;
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F5F5F5;
+    border-radius: 80px;
+}
+
+.title-start {
+    font-weight: 650;
+    font-size: 30px;
+    letter-spacing: 0.05em;
+    padding-top: 10%;
+}
+
+.content-start {
+    font-weight: 390;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    padding: 16px;
+}
+
+.button-container {
+    padding: 48px;
+}
+
+.container-ansques {
+    display: flex;
+    justify-content: center;
+}
+
+.answer-question {
+    width: 70%;
+}
+
+/* Question */
+.question {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    margin: 50px;
+}
+
+/* Answer */
+.answer-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+Answer {
+    margin: 20px 0;
+}
+
+.question-section {
+    margin: 10px;
+}
+
+.question-count {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+.icon-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+}
+
+/* Progress Bar */
+
+.progress {
+    margin: 15px;
+}
+
+:global(.ant-progress .ant-progress-inner) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+:global(.ant-progress .ant-progress-bg) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+:global(.ant-progress.ant-progress-status-success .ant-progress-bg) {
+    background-color: #F85F8B;
+}

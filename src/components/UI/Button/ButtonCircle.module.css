@@ -1,0 +1,17 @@
+.button{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFF4F7;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+}
+.exit{
+    background-color: #FFFFFF;
+    color: #F85F8B;
+}
+.icon{
+    font-size: 20px;
+}

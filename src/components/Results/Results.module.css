@@ -1,0 +1,55 @@
+.exit-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.content,
+.score {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    padding: 2px;
+}
+
+.container-button {
+    display: flex;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    margin-right: 20px;
+}
+
+.sub-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie-chart {
+    flex: 1;
+    padding-right: 140px;
+    padding-top: 20px;
+}
+
+.content-container {
+    color: #374552;
+    flex: 1;
+    margin-left: 20px;
+}
